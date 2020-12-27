@@ -1,0 +1,118 @@
+.landingPageArea{
+   
+    overflow: hidden;
+    min-height: 100vh;
+    .andingPageContents{
+        position: relative;
+        // border: solid 1px #fff;
+        img{
+            //LOGO
+            &:nth-child(1){
+                width: 300px;
+                @include smlPad{
+                    width: 200px;
+                }
+            }
+            //主體
+            &:nth-child(2){
+                width: 650px;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%);
+                @include smlPad{
+                    width: 500px;
+                    transform: translate(-50%,0%);
+                }
+                @include bigPhone{
+                    width: 380px;
+                    transform: translate(-50%,20%);
+                }
+            }
+        }
+        .ballPrants{
+            margin: 0 auto;
+            width: 500px;
+            display: flex;
+            justify-content: space-around;
+            align-self: center;
+
+            position: absolute;
+            top: 320px;
+            left: 50%;
+            transform: translateX(-50%);
+            @include smlPad{
+                transform: translate(-50%,-50%);
+            }
+            @include smlPhone{
+                width: 380px;
+
+            }
+            
+            a{
+                text-decoration: none;
+                color: $beige;
+            }
+            .frontBall{
+                width: 150px;
+                height: 150px;
+                background-color: $blue1;
+                border-radius: 50%;
+                color: $beige;
+                font-size: $h2;
+                line-height: 150px;
+                text-align: center;
+                @include smlPhone{
+                    width: 100px;
+                    height: 100px;
+                    line-height: 100px;
+                    font-size: $h4;
+                }
+                
+                
+            }
+            .backBall{
+                width: 150px;
+                height: 150px;
+                background-color: $blue1;
+                border-radius: 50%;
+                
+                font-size: $h2;
+                line-height: 150px;
+                text-align: center;
+                @include smlPhone{
+                    width: 100px;
+                    height: 100px;
+                    line-height: 100px;
+                    font-size: $h4;
+
+                }
+    
+
+            }
+        }
+
+        .yellowClound{
+            position: absolute;
+            top: 650px;
+            img{
+                position: absolute;
+                width: 700px;
+                @include smlPad{
+                    width: 450px;
+
+                }
+                
+                
+            }
+    
+        }
+
+    }
+    
+
+   
+
+
+}

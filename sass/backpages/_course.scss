@@ -1,0 +1,392 @@
+div.course{
+  main{
+    position: relative;
+    min-height: 100vh;
+    div.addCourseBackAll{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.2s;
+      div.addCourseBack{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      div.addCourse{
+        height: 95%;
+        width: 90%;
+        max-width: 1200px;
+        padding: 0px 16px;
+        background-color: $beige;
+        border-radius: 10px;
+        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        button.magicalBtn{
+          position: absolute;
+          left: 15%;
+          top: 10%;
+        }
+        form.addCourseForm{
+          width: 100%;
+          height: 80%;
+          margin: 0 auto;
+          padding: 30px 0px;
+          background-color: $white;
+          overflow-y: scroll;
+          div.addFormAll{
+            width: 56%;
+            margin: 0 auto;
+            @include clearfixed;
+            div{
+              margin-bottom: 30px;
+            }
+            div.addCourseName{
+              display: flex;
+            }
+            div.addCourseImage{
+              display: flex;
+              div.inputFileImage{
+                @include inputFileStyle;
+                width: 476px;
+                margin-bottom: 0px;
+                margin-left: 5px;
+                P{
+                  max-width: 390px;
+                  cursor: default;
+                }
+              }
+            }
+            div.addCourseIntroduction{
+              display: flex;
+            }
+            label{
+              font-size: $bp;
+              margin-right: 50px;
+            }
+            textarea{
+              width: 494px;
+              font-size: $mp;
+              resize: none;
+              margin-left: 5px;
+            }
+            select{
+              @include selectStyle;
+              width: 500px;
+            }
+            input{
+              @include inputTextStyle;
+              width: 476px;
+            }
+            input.addOpenTime{
+              @include datepickerStyle;
+            }
+            input.fundraising{
+              cursor: not-allowed;
+              opacity: 0.3;
+              color: gray;
+            }
+            input.addOpenTime.fundraising{
+              cursor: not-allowed;
+              opacity: 0.3;
+              color: gray;
+            }
+            input#deadline{
+              display: none;
+            }
+            button.addCourseBtn{
+              @include addBtn;
+              float: right;
+            }
+          }
+        }
+        img.cancelBack{
+          position: absolute;
+          width: 50px;
+          top: 10px;
+          right: 10px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    div.addCourseBackAll.-on{
+      opacity: 1;
+      z-index: 5;
+    }
+    div.editCourseBackAll{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.2s;
+      div.editCourseBack{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      div.editCourse{
+        height: 95%;
+        width: 90%;
+        max-width: 1200px;
+        padding: 0px 16px;
+        background-color: $beige;
+        border-radius: 10px;
+        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        form.editCourseForm{
+          width: 100%;
+          height: 80%;
+          margin: 0 auto;
+          padding: 30px 0px;
+          background-color: $white;
+          overflow-y: scroll;
+          div.editFormAll{
+            width: 56%;
+            margin: 0 auto;
+            @include clearfixed;
+            div{
+              margin-bottom: 30px;
+            }
+            div.courseNumber, div.crouseOnDate, div.buyCount, div.collectedCount, div.courseScore{
+              display: flex;
+              p{
+                font-size: $mp;
+                margin-left: 5px;
+              }
+              span{
+                margin-right: 15px;
+              }
+            }
+            div.editCourseName{
+              display: flex;
+            }
+            div.editCourseImage{
+              display: flex;
+              div.inputFileImage{
+                @include inputFileStyle;
+                width: 476px;
+                margin-bottom: 0px;
+                margin-left: 5px;
+                P{
+                  max-width: 390px;
+                  cursor: default;
+                }
+              }
+            }
+            div.editCourseIntroduction{
+              display: flex;
+            }
+            label{
+              font-size: $bp;
+              margin-right: 50px;
+            }
+            textarea{
+              width: 494px;
+              font-size: $mp;
+              resize: none;
+              margin-left: 5px;
+            }
+            select{
+              @include selectStyle;
+              width: 500px;
+            }
+            input{
+              @include inputTextStyle;
+              width: 476px;
+            }
+            input.editOpenTime{
+              @include datepickerStyle;
+            }
+            input.fundraising{
+              cursor: not-allowed;
+              opacity: 0.3;
+              color: gray;
+            }
+            input.editOpenTime.fundraising{
+              cursor: not-allowed;
+              opacity: 0.3;
+              color: gray;
+            }
+            button.saveBtn{
+              @include saveBtn;
+              float: right;
+            }
+          }
+        }
+        img.cancelBack{
+          position: absolute;
+          width: 50px;
+          top: 10px;
+          right: 10px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    div.editCourseBackAll.-on{
+      opacity: 1;
+      z-index: 5;
+    }
+    h2{
+      @include backTitle;
+    }
+    div.searchContent{
+      @include blockStyle;
+      label{
+        font-size: $mp;
+        display: block;
+        margin-bottom: 5px;
+      }
+      div.upLoadTime{
+        display: inline-block;
+        margin-bottom: 20px;
+        div.dateRange{
+          display: flex;
+          input{
+            @include datepickerStyle;
+            width: 200px;
+            &:first-child{
+              margin-right: 15px;
+            }
+          }
+          p{
+            font-size: $mp;
+            line-height: 40px;
+            margin-right: 15px;
+          }
+        }
+      }
+      div.filter{
+        display: flex;
+        margin-bottom: 20px;
+        div.status{
+          margin-right: 75px;
+        }
+        div.teachers{
+          margin-right: 75px;
+        }
+        select{
+          @include selectStyle;
+          width: 200px;
+        }
+      }
+      div.searchBottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        div.courseNames{
+          input{
+            @include inputTextStyle;
+            width: 650px;
+          }
+        }
+        button#searchBtn{
+          @include backBtn;
+        }
+      }
+    }
+    div.addOrCancle{
+      display: flex;
+      justify-content: flex-end;
+      margin: 25px 0px;
+      padding-right: 5px;
+
+      button.cancleButton{
+        @include cancelBtn;
+        height: 50px;
+      }
+      button.addButton{
+        @include addBtn;
+        margin-left: 40px;
+        margin-right: 50px;
+        height: 50px;
+      }
+      button.putOnButton{
+        @include onBtn;
+        margin-right: 40px;
+      }
+    }
+    div.table{
+      font-size: $bp;
+      max-width: 100%;
+      div.tr{
+        display: flex;
+        flex-shrink: 0;
+        padding: $fontSize 10px;
+        &:nth-child(2n){
+          background: $beige;
+        }
+      }
+      div.td{
+        width: 60px;
+        display: flex;
+        align-items: center;
+        line-height: 32px;
+        label{
+          cursor: pointer;
+          input{
+            @include checkbox;
+          }
+        }
+        &:nth-child(2){
+          flex-grow: 2;
+        }
+        &:nth-child(3){
+          flex-grow: 1;
+        }
+        &:nth-child(4){
+          flex-grow: 8;
+          padding-right: 10px;
+        }
+        &:nth-child(5){
+          flex-grow: 1;
+        }
+        &:nth-child(6){
+          flex-grow: 2;
+          padding-right: 10px;
+        }
+        &:nth-child(7){
+          flex-grow: 0.5;
+          button{
+            @include editBtn;
+          }
+        }
+      }
+      div.tr.title{
+        font-weight: bold;
+        background: bisque;
+      }  
+    }
+    div.changePage{
+      float: right;
+      @include clearfixed;
+      margin-right: 30px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      button{
+        @include changePage;
+        height: 50px;
+      }
+      button.nextPage{
+        margin-left: 40px;
+      }
+    }
+  }
+}

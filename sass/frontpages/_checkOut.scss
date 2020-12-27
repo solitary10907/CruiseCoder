@@ -1,0 +1,906 @@
+.checkOut {
+    //需告變數
+    //置中
+    $center: 0 auto;
+    $label: 190px;
+
+    //付款方式
+    // 使用方法: @include paymentLabel;
+    @mixin paymentLabel {
+        display: inline-block;
+        width: $label;
+        font-weight: 500;
+        // vertical-align: middle;
+        // border: 1px solid rgb(233, 163, 13);
+
+    }
+
+    // 使用方法: @include paymentInput;
+    @mixin paymentInput {
+        border: none;
+        height: 45px;
+        box-shadow: 1px 1px 10px rgb(211, 211, 211);
+        width: 300px;
+        outline: none;
+        font-size: 28px;
+        padding-left: 10px;
+        // border: 1px solid blue;
+    }
+
+    // 使用方法: @include paymenIfon;
+    @mixin paymenIfon {
+        // display: table-cell;
+        margin: 10px 0px 30px 50px;
+        height: 50px;
+        // border: 1px solid rgb(57, 233, 13);
+    }
+
+
+    main {
+        max-width: 1200px;
+        width: 95%;
+        margin: $center;
+        
+        h2 {
+            margin-top: 50px;
+            color: aliceblue;
+            font-size: $h2;
+            font-weight: bold;
+
+            @include h2;
+
+            @include smlPad {
+                font-size: $h3;
+            }
+
+            @include bigPhone {
+                font-size: $h4;
+            }
+
+            @include smlPhone {
+                font-size: $bp;
+            }
+        }
+
+        h3 {
+            margin: 50px 0px 0px 30px;
+            color: $white;
+            font-size: $h3;
+            font-weight: bold;
+
+            @include smlPad {
+                font-size: $h3;
+            }
+
+            @include bigPhone {
+                font-size: $h4;
+            }
+
+            @include smlPhone {
+                font-size: $bp;
+            }
+
+        }
+
+        .shoppingList {
+            width: 95%;
+            margin: $center;
+            margin-top: 50px;
+            font-size: 40px;
+            // border: 1px solid $white;
+
+            @include smlPad {
+                margin-top: 0px;
+
+            }
+
+            .course {
+                border: 10px solid $orange;
+                background-color: $beige;
+                margin-top: 30px;
+                transform-style: preserve-3d;
+
+                @include bigPad {
+                    border: 8px solid $orange;
+                }
+
+
+                .top {
+                    display: flex;
+                    justify-content: space-between;
+                    color: rgb(0, 0, 0);
+                    font-size: $h4;
+                    padding: 30px 0px 20px 25px;
+
+                    @include bigPad {
+                        padding: 10px 10px 10px 10px;
+                        flex-direction: column;
+                    }
+
+
+                    .left {
+                        display: flex;
+                        flex-grow: 2;
+
+                        @include bigPhone {
+                            flex-direction: column;
+                            justify-content: center;
+                            margin-top: 8px;
+                        }
+
+
+                        .course_Img {
+                            width: 300px;
+
+                            // flex-grow: 2;
+                            @include laptop {
+                                max-width: 250px;
+                            }
+
+                            @include bigPad {
+                                max-width: 200px;
+                            }
+
+                            @include bigPhone {
+                                max-width: 280px;
+                                align-self: center;
+                            }
+
+                            // @include smlPad {
+                            //     max-width: 300px;
+
+                            // }
+
+                            a {
+                                display: inline-block;
+
+                                img {
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+
+                        .title {
+                            // max-width: 65%;
+                            padding: 3% 3% 0 2%;
+                            line-height: $h4*1.5;
+                            flex-grow: 2;
+                            font-weight: 600;
+
+                            // border: 1px solid red;
+                            @include bigPad {
+                                font-size: $bp;
+                            }
+
+                            @include smlPad {
+                                padding: 1% 1% 0 2%;
+                                font-size: $mp;
+                                line-height: $h4;
+                            }
+
+                            @include bigPhone {
+
+                                align-self: center;
+                            }
+
+
+                            a {
+                                text-decoration: none;
+                                color: $black;
+                            }
+                        }
+                    }
+
+                    a {
+                        margin-right: 2%;
+
+                        @include bigPad {
+                            order: -1;
+                            align-self: flex-end;
+                            margin-right: 0;
+                        }
+
+                        i {
+                            color: rgb(100, 100, 100);
+                            font-size: 40px;
+                            cursor: pointer;
+
+
+                            // margin-right: 30px;
+                            @include smlPad {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+
+                .bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 0px 30px 30px 30px;
+
+                    @include smlPad {
+                        margin: 5px 15px 20px 15px;
+
+                    }
+
+                    p.type {
+                        font-size: $bp;
+                        // padding: 0px 0px 10px 25px;
+                        color: rgb(100, 100, 100);
+
+                        @include smlPad {
+                            font-size: 20px;
+                        }
+
+                    }
+
+                    p.singlePrice {
+                        text-align: right;
+                        font-size: $h4;
+                        color: #003B80;
+                        font-weight: 600;
+                        // margin: 0px 30px 30px 0px;
+
+                        @include smlPad {
+                            font-size: $bp;
+                        }
+                    }
+                }
+            }
+        }
+
+        .shoppingList.-on {
+            color: $white;
+            font-size: $h4;
+            text-align: center;
+            margin-top: 80px;
+
+
+
+            @include smlPad {
+                font-size: $bp;
+            }
+        }
+
+        .price {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+
+
+            .discount {
+                margin: 50px 30px 80px 0px;
+                background-color: rgba(186, 180, 180, 0.397);
+                padding: 45px;
+                border-radius: 20px;
+                font-size: 30px;
+
+                // width: 960px;
+                @include laptop {
+                    padding: 35px;
+                    margin: 40px 30px 80px 30px;
+                    font-size: 25px;
+                    line-height: 30px;
+                }
+
+                @include bigPad {
+                    margin: 30px 30px 50px 30px;
+                    font-size: 22px;
+                    line-height: 26px;
+                    padding: 20px;
+                }
+
+                form.ccPoint {
+                    justify-content: center;
+                    align-items: center;
+                    // display: flex;
+                    letter-spacing: .1rem;
+                    color: $white;
+                    font-weight: 500;
+
+                    input {
+                        width: 100px;
+                        height: 40px;
+                        font-size: 30px;
+                        padding: 0px 5px;
+                        border: none;
+                        margin: 0px 5px;
+                        border-radius: 10px;
+                        outline: none;
+                        text-align: right;
+
+                        @include bigPad {
+                            width: 80px;
+                            font-size: 20px;
+                            height: 35px;
+                        }
+                    }
+                }
+
+
+
+
+            }
+
+            p.overCcp {
+                margin-right: 30px;
+                color: $red;
+            }
+
+            .sum {
+                color: $white;
+                font-size: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                font-weight: 600;
+                margin: 0px 30px 20px 0px;
+
+                @include bigPad {
+                    font-size: $bp;
+                }
+
+
+
+                .ccPoint {
+                    display: flex;
+                    margin-bottom: 30px;
+
+                    @include bigPad {
+                        margin-bottom: 20px;
+                    }
+
+                    p.text {
+                        margin-right: 50px;
+
+                        @include bigPad {
+                            margin-right: 30px;
+                        }
+                    }
+
+                    p.price {
+                        color: $red;
+                    }
+                }
+
+                .total {
+                    display: flex;
+                    margin-bottom: 30px;
+
+                    @include bigPad {
+                        margin-bottom: 20px;
+                    }
+
+                    p.text {
+                        margin-right: 50px;
+
+                        @include bigPad {
+                            margin-right: 30px;
+                        }
+                    }
+                }
+
+                .pay {
+                    display: flex;
+                    margin-bottom: 30px;
+
+                    @include bigPad {
+                        margin-bottom: 20px;
+                    }
+
+                    p.text {
+                        margin-right: 50px;
+
+                        @include bigPad {
+                            margin-right: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 填寫付款資料
+        .payment {
+            @include clearfixed;
+            margin-bottom: 150px;
+            position: relative;
+
+
+            .title {
+                font-size: $h3;
+                color: $white;
+                padding: 30px 0px 30px 30px;
+                font-weight: 600;
+
+                @include smlPad {
+                    font-size: $h3;
+                }
+
+                @include bigPhone {
+                    font-size: $h4;
+                }
+
+                @include smlPhone {
+                    font-size: $bp;
+                }
+            }
+
+
+            form.info {
+                background-color: $beige;
+                margin: $center;
+                width: 95%;
+
+                .text {
+                    font-size: $h4;
+                    display: flex;
+
+                    @include bigPad {
+                        font-size: $bp;
+                    }
+
+                    // @include smlPad {
+
+                    //     color: red;
+                    // }
+
+                    @include bigPhone {
+                        font-size: $mp;
+                        // color: rgb(17, 0, 255);
+                    }
+
+                    p {
+                        padding: 70px 20px 20px 50px;
+                        font-weight: 600;
+
+                        @include smlPad {
+                            padding: 30px 20px 20px 30px;
+                        }
+
+                        @include bigPhone {
+                            padding: 30px 10px 20px 20px;
+                        }
+                    }
+
+                    .img {
+                        height: 50px;
+                        width: 200px;
+                        position: relative;
+                        margin-top: 60px;
+
+                        @include smlPad {
+                            margin-top: 20px;
+                            width: 180px;
+                            height: 45px;
+                            // border: 1px solid red;
+                        }
+
+                        @include bigPhone {
+                            width: 160px;
+                            height: 40px;
+                            // border: 1px solid blue;
+
+                        }
+
+                        img {
+                            max-height: 100%;
+                            max-width: 100%;
+                            width: auto;
+                            height: auto;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                        }
+                    }
+                    span.data{
+                        margin-top: 70px;
+                        color: #b8b8b8;
+                    }
+                }
+
+                p.note {
+                    color: #707070;
+                    padding: 0px 0px 30px 50px;
+                    font-size: $mp;
+
+                    &:before {
+                        content: '*';
+                        color: $red;
+                    }
+
+                    @include smlPad {
+                        font-size: $sp;
+                        padding: 0px 0px 30px 20px;
+
+                    }
+
+                    @include bigPhone {}
+                }
+
+                .name {
+                    
+                    @include paymenIfon;
+
+                    @include smlPad {
+                        margin: 10px 0px 30px 30px;
+                        height: auto;
+                    }
+
+                    @include bigPhone {
+                        margin: 10px 0px 30px 20px;
+                    }
+
+
+                    label {
+                        @include paymentLabel;
+
+                        &:before {
+                            content: '*';
+                            color: $red;
+                        }
+                    }
+
+                    input {
+                        @include paymentInput;
+
+                        @include smlPad {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            font-size: $mp;
+                        }
+
+
+                    }
+
+                    input::-webkit-input-placeholder {
+                        color: #b9b9b9;
+                        /* 更改placeholder的字體顏色  */
+                        font-size: 20px;
+                        /* 更改placeholder的字體大小  */
+                    }
+
+                    .-error {
+                        border: 1px solid red;
+                    }
+                }
+
+                .phoneNum {
+                    @include paymenIfon;
+
+                    @include smlPad {
+                        margin: 10px 0px 30px 30px;
+                        height: auto;
+
+                    }
+
+                    @include bigPhone {
+                        margin: 10px 0px 30px 20px;
+                    }
+
+
+                    label {
+                        @include paymentLabel;
+
+                        &:before {
+                            content: '*';
+                            color: $red;
+                        }
+                    }
+
+                    input#phone_Num.-error {
+                        border: 1px solid red;
+                    }
+
+                    input {
+                        @include paymentInput;
+
+                        @include smlPad {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            font-size: $mp;
+
+                        }
+                    }
+
+                    input::-webkit-input-placeholder {
+                        color: #b9b9b9;
+                        /* 更改placeholder的字體顏色  */
+                        font-size: 20px;
+                        /* 更改placeholder的字體大小  */
+                    }
+
+                }
+
+                .creditCardNum {
+                    @include paymenIfon;
+
+                    @include smlPad {
+                        margin: 10px 0px 30px 30px;
+                        height: auto;
+                    }
+
+                    @include bigPhone {
+                        margin: 10px 0px 30px 20px;
+                    }
+
+                    label {
+                        @include paymentLabel;
+
+                        &:before {
+                            content: '*';
+                            color: $red;
+                        }
+
+                        @include smlPad {
+                            display: block;
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    input {
+                        @include paymentInput;
+                        width: 90px;
+                        margin-right: 10px;
+
+                        @include bigPhone {
+                            width: 70px;
+                            font-size: $mp;
+                        }
+                    }
+
+                    .-error {
+                        border: 1px solid red;
+                    }
+                }
+
+                .date {
+                    @include paymenIfon;
+
+                    @include smlPad {
+                        margin: 10px 0px 30px 30px;
+                        height: auto;
+                    }
+
+                    @include bigPhone {
+                        margin: 10px 0px 30px 20px;
+                    }
+
+                    label.text {
+                        display: inline-block;
+                        width: $label;
+
+                        &:before {
+                            content: '*';
+                            color: $red;
+                        }
+
+                        @include smlPad {
+                            display: block;
+                            margin-bottom: 10px;
+                        }
+
+                    }
+
+                    select {
+                        border: none;
+                        height: 45px;
+                        box-shadow: 1px 1px 10px rgb(211, 211, 211);
+                        width: 100px;
+                        outline: none;
+                        font-size: $h4;
+                        font-size: 25px;
+                        padding: 0px 10px;
+
+                        @include bigPad {
+                            font-size: $bp;
+                        }
+
+                        @include bigPhone {
+                            font-size: $mp;
+
+                        }
+                    }
+
+                    label.months {
+                        width: 55px;
+                        display: inline-block;
+                        font-size: 28px;
+                        font-weight: 500;
+                        padding-left: 3px;
+
+                        @include bigPad {
+                            font-size: $bp;
+                        }
+
+                        @include bigPhone {
+                            font-size: $mp;
+
+                        }
+                    }
+
+                    label.years {
+                        width: 55px;
+                        display: inline-block;
+                        font-size: 28px;
+                        font-weight: 500;
+                        padding-left: 3px;
+
+                        @include bigPad {
+                            font-size: $bp;
+                        }
+
+                        @include bigPhone {
+                            font-size: $mp;
+
+                        }
+                    }
+                }
+
+                .creditCardCsc {
+                    @include paymenIfon;
+                    padding-bottom: 100px;
+
+                    @include smlPad {
+                        margin: 10px 0px 30px 30px;
+                        height: auto;
+                        padding-bottom: 30px;
+                    }
+
+                    @include bigPhone {
+                        margin: 10px 0px 30px 20px;
+                    }
+
+                    label {
+                        @include paymentLabel;
+
+                        &:before {
+                            content: '*';
+                            color: $red;
+                        }
+
+                        @include smlPad {
+                            display: block;
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    input {
+                        @include paymentInput;
+                        width: 90px;
+
+                        @include bigPhone {
+                            font-size: $mp;
+                        }
+                    }
+
+                    .-error {
+                        border: 1px solid red;
+                    }
+                }
+
+                button {
+                    float: right;
+                    margin-right: 30px;
+                    @include btn($h4);
+
+                    @include smlPad {
+                        @include btn($bp);
+                    }
+
+                    @include bigPhone {
+                        @include btn($mp);
+                    }
+
+                    @include smlPhone {
+                        @include btn($sp);
+                    }
+                }
+            }
+
+        }
+
+        // 付款完成的燈箱
+        .success.-on,
+        .failed.-on {
+            /* 加上 -on 之後，訂單資訊 漸漸出現，因為有設定 transition */
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .success,
+        .failed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: hsla(0, 0%, 0%, .5);
+            overflow: hidden;
+
+            /* 預設：完全透明；設定 z-index: -1 會在整個頁面的後方，看不到，才不會擋到頁面元素。 */
+            opacity: 0;
+            z-index: -1;
+            transition: all .3s;
+
+            section {
+                position: relative;
+                min-width: 380px;
+                margin: 0 auto;
+                background-color: #182749;
+                border-radius: 20px;
+                padding: 60px 0px;
+
+                // 叉叉
+                .close {
+                    width: 50px;
+
+                    // margin: 0 auto;
+                    img {
+                        position: absolute;
+                        top: $fontSize;
+                        right: $fontSize;
+                        cursor: pointer;
+                        color: $white;
+                    }
+                }
+
+                // 付款成功的圖片
+                .successfulTransaction,
+                .failedTransaction {
+                    width: 300px;
+                    margin: 0 auto;
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
+
+                p.title {
+                    font-size: $h1;
+                    font-weight: 600;
+                    margin: 30px 0px;
+                    color: $white;
+                    text-align: center;
+                    text-shadow: 2px 2px 6px black;
+                }
+
+                p.failed_Title {
+                    font-size: $h1;
+                    font-weight: 600;
+                    margin: 30px 0px;
+                    color: $red;
+                    text-align: center;
+                    text-shadow: 2px 2px 6px black;
+                }
+
+                button.go_Course,
+                button.go_checkOut {
+                    margin: 0 auto;
+                    display: block;
+                    @include btn($h4);
+
+                    @include smlPad {
+                        @include btn($bp);
+                    }
+
+                    @include bigPhone {
+                        @include btn($mp);
+                    }
+
+                    @include smlPhone {
+                        @include btn($sp);
+                    }
+                }
+            }
+        }
+
+    }
+}
